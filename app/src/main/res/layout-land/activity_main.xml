@@ -14,9 +14,11 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:background="#FFEB3B"
-        android:text="TextView"
+        android:text="0"
         android:textAlignment="center"
-        android:textSize="50sp"
+        android:textColor="#670EFF"
+        android:textSize="180sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
