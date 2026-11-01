@@ -1,9 +1,11 @@
 package com.example.helloconstraint;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,26 +32,32 @@ public class MainActivity extends AppCompatActivity {
         TextView tekst = findViewById(R.id.textView);
 
         int i=0;
+        zeroBtn.setBackgroundColor(Color.GRAY);
 
         toastBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
+                Toast.makeText(MainActivity.this, "Test", Toast.LENGTH_SHORT).show();
             }
         });
+
         zeroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                tekst.setText(0);
-
-
+                tekst.setText("0");
+                v.setBackgroundColor(Color.GRAY);
             }
         });
+
         countBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 int n = Integer.parseInt(tekst.getText().toString());
-                tekst.setText((n+1));
+                if(n==0)
+                    zeroBtn.setBackgroundColor(Color.RED);
+                if(n%2==0)
+                    v.setBackgroundColor(Color.GREEN);
+                else
+                    v.setBackgroundColor(Color.BLUE);
+                tekst.setText(""+(n+1));
             }
         });
     }
